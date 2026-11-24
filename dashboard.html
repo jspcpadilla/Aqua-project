@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaMonitor IoT | Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet"
+    >
+
+    <!-- CSS del Dashboard -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+    <aside class="sidebar">
+
+        <!-- BRAND -->
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="bi bi-droplet-half"></i>
+            </div>
+
+            <div class="brand-text">
+                <span class="brand-name">
+                    AQUA
+                </span>
+
+                <span class="brand-subtitle">
+                    MONITOR IoT
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-divider"></div>
+
+
+        <!-- MENU -->
+        <nav class="sidebar-nav">
+
+            <p class="menu-title">
+                MONITOREO
+            </p>
+
+            <a href="#" class="menu-item active">
+                <span class="menu-icon">
+                    <i class="bi bi-grid-1x2-fill"></i>
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+            </a>
+
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">
+                    <i class="bi bi-water"></i>
+                </span>
+
+                <span>
+                    Tanques
+                </span>
+            </a>
+
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">
+                    <i class="bi bi-activity"></i>
+                </span>
+
+                <span>
+                    Telemetría
+                </span>
+            </a>
+
+
+            <p class="menu-title mt-4">
+                SISTEMA
+            </p>
+
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">
+                    <i class="bi bi-gear-fill"></i>
+                </span>
+
+                <span>
+                    Configuración
+                </span>
+            </a>
+
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">
+                    <i class="bi bi-shield-check"></i>
+                </span>
+
+                <span>
+                    Seguridad
+                </span>
+            </a>
+
+        </nav>
+
+
+        <!-- ESTADO DEL SISTEMA -->
+        <div class="sidebar-status">
+
+            <div class="status-header">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    SISTEMA OPERATIVO
+                </span>
+
+            </div>
+
+
+            <div class="status-line">
+
+                <span>
+                    Firebase
+                </span>
+
+                <strong>
+                    ONLINE
+                </strong>
+
+            </div>
+
+
+            <div class="status-line">
+
+                <span>
+                    IoT Gateway
+                </span>
+
+                <strong>
+                    ONLINE
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER SIDEBAR -->
+        <div class="sidebar-footer">
+
+            <small>
+                AquaMonitor IoT
+            </small>
+
+            <small>
+                v1.0.0
+            </small>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="mobile-menu-btn"
+                    type="button"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
+
+
+                <div>
+
+                    <div class="page-kicker">
+                        SISTEMA DE MONITOREO
+                    </div>
+
+                    <h1 class="page-title">
+                        Centro de Control
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <!-- LIVE -->
+                <div class="live-indicator">
+
+                    <span class="live-dot"></span>
+
+                    <span>
+                        DATOS EN TIEMPO REAL
+                    </span>
+
+                </div>
+
+
+                <!-- USUARIO -->
+                <div class="user-profile">
+
+                    <div class="user-avatar">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+
+
+                    <div class="user-info">
+
+                        <span class="user-name">
+                            Operador
+                        </span>
+
+                        <span class="user-role">
+                            Administrador
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        id="logoutButton"
+                        class="logout-btn"
+                        type="button"
+                        title="Cerrar sesión"
+                    >
+                        <i class="bi bi-box-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             DASHBOARD CONTENT
+        ================================================== -->
+        <div class="dashboard-content">
+
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
+            <section class="hero-section">
+
+                <div class="hero-content">
+
+                    <div class="hero-icon">
+                        <i class="bi bi-broadcast-pin"></i>
+                    </div>
+
+
+                    <div>
+
+                        <span class="section-label">
+                            MONITOREO ACTIVO
+                        </span>
+
+                        <h2>
+                            Control inteligente del recurso hídrico
+                        </h2>
+
+                        <p>
+                            Supervisión en tiempo real del estado,
+                            nivel y capacidad del tanque conectado.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-status">
+
+                    <div class="connection-badge">
+
+                        <span class="connection-pulse"></span>
+
+                        <div>
+
+                            <span class="connection-label">
+                                CONEXIÓN
+                            </span>
+
+                            <strong id="connectionValue">
+                                Online
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TANQUE ACTUAL
+            ================================================== -->
+            <section class="tank-header-card">
+
+                <div class="tank-header-info">
+
+                    <div class="tank-icon">
+                        <i class="bi bi-water"></i>
+                    </div>
+
+
+                    <div>
+
+                        <span class="section-label">
+                            TANQUE MONITOREADO
+                        </span>
+
+                        <h3>
+                            Tanque principal
+                        </h3>
+
+                        <div class="tank-id">
+
+                            <i class="bi bi-hash"></i>
+
+                            <span id="tankId">
+                                tanque001
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tank-header-status">
+
+                    <span class="status-caption">
+                        ESTADO ACTUAL
+                    </span>
+
+
+                    <div class="tank-state-badge">
+
+                        <span class="state-dot"></span>
+
+                        <span id="tankState">
+                            Operativo
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 KPI CARDS
+            ================================================== -->
+            <section class="kpi-grid">
+
+
+                <!-- =============================
+                     PORCENTAJE
+                ============================== -->
+                <div class="metric-card primary-card">
+
+                    <div class="metric-top">
+
+                        <div class="metric-icon blue">
+                            <i class="bi bi-droplet-fill"></i>
+                        </div>
+
+                        <span class="metric-tag">
+                            NIVEL
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-value">
+
+                        <span id="percentageValue">
+                            --%
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-label">
+                        Porcentaje de llenado
+                    </div>
+
+
+                    <div class="progress custom-progress">
+
+                        <div
+                            id="tankPercentage"
+                            class="progress-bar"
+                            role="progressbar"
+                            style="width: 0%"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="0"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =============================
+                     VOLUMEN
+                ============================== -->
+                <div class="metric-card">
+
+                    <div class="metric-top">
+
+                        <div class="metric-icon cyan">
+                            <i class="bi bi-beaker-fill"></i>
+                        </div>
+
+                        <span class="metric-tag">
+                            VOLUMEN
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-value">
+
+                        <span id="volumeValue">
+                            -- L
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-label">
+                        Volumen disponible
+                    </div>
+
+
+                    <div class="metric-secondary">
+
+                        Capacidad útil:
+
+                        <strong id="capacityValue">
+                            -- L
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =============================
+                     ESTADO
+                ============================== -->
+                <div class="metric-card">
+
+                    <div class="metric-top">
+
+                        <div class="metric-icon green">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
+
+                        <span class="metric-tag">
+                            ESTADO
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-value status-value">
+
+                        <span id="levelStatus">
+                            --
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-label">
+                        Nivel del tanque
+                    </div>
+
+
+                    <div class="metric-secondary">
+
+                        Lectura:
+
+                        <strong id="readingStatus">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =============================
+                     ACTUALIZACIÓN
+                ============================== -->
+                <div class="metric-card">
+
+                    <div class="metric-top">
+
+                        <div class="metric-icon purple">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+
+                        <span class="metric-tag">
+                            ACTUALIZACIÓN
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-value time-value">
+
+                        <span id="lastUpdate">
+                            --
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-label">
+                        Última medición recibida
+                    </div>
+
+
+                    <div class="metric-secondary">
+
+                        Estado:
+
+                        <strong>
+                            Tiempo real
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MONITOR PRINCIPAL
+            ================================================== -->
+            <section class="main-monitor-grid">
+
+
+                <!-- =================================================
+                     VISUALIZACIÓN DEL TANQUE
+                ================================================== -->
+                <div class="panel tank-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                VISUALIZACIÓN
+                            </span>
+
+                            <h3>
+                                Nivel del tanque
+                            </h3>
+
+                        </div>
+
+
+                        <div class="panel-actions">
+
+                            <span class="mini-live">
+
+                                <span></span>
+
+                                LIVE
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tank-visual-container">
+
+
+                        <!-- ESCALA -->
+                        <div class="tank-scale">
+
+                            <span>
+                                100%
+                            </span>
+
+                            <span>
+                                75%
+                            </span>
+
+                            <span>
+                                50%
+                            </span>
+
+                            <span>
+                                25%
+                            </span>
+
+                            <span>
+                                0%
+                            </span>
+
+                        </div>
+
+
+                        <!-- TANQUE -->
+                        <div class="tank-visual">
+
+                            <div class="tank-glow"></div>
+
+
+                            <!-- AGUA -->
+                            <div
+                                id="waterLevel"
+                                class="water-level"
+                                style="height: 0%"
+                            >
+
+                                <div class="water-wave wave-one"></div>
+
+                                <div class="water-wave wave-two"></div>
+
+                                <div class="water-reflection"></div>
+
+                            </div>
+
+
+                            <!-- INFORMACIÓN CENTRAL -->
+                            <div class="tank-inner">
+
+                                <div class="tank-percentage">
+
+                                    <span id="tankPercentageValue">
+                                        --%
+                                    </span>
+
+                                    <small>
+                                        NIVEL
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ESTADO DEL NIVEL -->
+                        <div class="tank-status-area">
+
+                            <div class="tank-status-main">
+
+                                <span class="status-dot"></span>
+
+                                <div>
+
+                                    <span>
+                                        Estado del nivel
+                                    </span>
+
+                                    <strong id="tankLevelStatus">
+                                        --
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     TELEMETRÍA
+                ================================================== -->
+                <div class="panel telemetry-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                TELEMETRÍA
+                            </span>
+
+                            <h3>
+                                Datos de sensores
+                            </h3>
+
+                        </div>
+
+
+                        <div class="sensor-icon">
+
+                            <i class="bi bi-cpu-fill"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="telemetry-list">
+
+
+                        <!-- DISTANCIA -->
+                        <div class="telemetry-item">
+
+                            <div class="telemetry-icon">
+
+                                <i class="bi bi-rulers"></i>
+
+                            </div>
+
+
+                            <div class="telemetry-info">
+
+                                <span>
+                                    Distancia del agua
+                                </span>
+
+                                <small>
+                                    Sensor HC-SR04
+                                </small>
+
+                            </div>
+
+
+                            <strong id="distanceValue">
+                                -- cm
+                            </strong>
+
+                        </div>
+
+
+
+                        <!-- NIVEL -->
+                        <div class="telemetry-item">
+
+                            <div class="telemetry-icon">
+
+                                <i class="bi bi-bar-chart-fill"></i>
+
+                            </div>
+
+
+                            <div class="telemetry-info">
+
+                                <span>
+                                    Nivel de agua
+                                </span>
+
+                                <small>
+                                    Altura calculada
+                                </small>
+
+                            </div>
+
+
+                            <strong id="waterLevelTelemetry">
+                                -- cm
+                            </strong>
+
+                        </div>
+
+
+
+                        <!-- CAPACIDAD -->
+                        <div class="telemetry-item">
+
+                            <div class="telemetry-icon">
+
+                                <i class="bi bi-database-fill"></i>
+
+                            </div>
+
+
+                            <div class="telemetry-info">
+
+                                <span>
+                                    Capacidad útil
+                                </span>
+
+                                <small>
+                                    Capacidad configurada
+                                </small>
+
+                            </div>
+
+
+                            <strong id="capacityTelemetry">
+                                -- L
+                            </strong>
+
+                        </div>
+
+
+
+                        <!-- ÚLTIMA LECTURA -->
+                        <div class="telemetry-item">
+
+                            <div class="telemetry-icon">
+
+                                <i class="bi bi-calendar3"></i>
+
+                            </div>
+
+
+                            <div class="telemetry-info">
+
+                                <span>
+                                    Última lectura
+                                </span>
+
+                                <small>
+                                    Marca temporal
+                                </small>
+
+                            </div>
+
+
+                            <strong id="timestampTelemetry">
+                                --
+                            </strong>
+
+                        </div>
+
+
+
+                        <!-- LECTURA VÁLIDA -->
+                        <div class="telemetry-item">
+
+                            <div class="telemetry-icon success-icon">
+
+                                <i class="bi bi-shield-check"></i>
+
+                            </div>
+
+
+                            <div class="telemetry-info">
+
+                                <span>
+                                    Lectura válida
+                                </span>
+
+                                <small>
+                                    Validación del sensor
+                                </small>
+
+                            </div>
+
+
+                            <strong id="validReading">
+                                --
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 INFORMACIÓN SECUNDARIA
+            ================================================== -->
+            <section class="secondary-grid">
+
+
+                <!-- SENSOR -->
+                <div class="info-panel">
+
+                    <div class="info-panel-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                SENSOR
+                            </span>
+
+                            <h4>
+                                Estado del dispositivo
+                            </h4>
+
+                        </div>
+
+                        <i class="bi bi-soundwave"></i>
+
+                    </div>
+
+
+                    <div class="device-status">
+
+                        <div class="device-status-icon">
+
+                            <i class="bi bi-cpu"></i>
+
+                        </div>
+
+
+                        <div class="device-status-info">
+
+                            <strong>
+                                HC-SR04
+                            </strong>
+
+                            <span>
+                                Sensor ultrasónico
+                            </span>
+
+                        </div>
+
+
+                        <div class="online-badge">
+
+                            <span></span>
+
+                            Activo
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CONEXIÓN -->
+                <div class="info-panel">
+
+                    <div class="info-panel-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                CONECTIVIDAD
+                            </span>
+
+                            <h4>
+                                Estado de conexión
+                            </h4>
+
+                        </div>
+
+                        <i class="bi bi-wifi"></i>
+
+                    </div>
+
+
+                    <div class="connection-status">
+
+                        <div class="connection-ring">
+
+                            <i class="bi bi-check-lg"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong id="connectionStatusSecondary">
+                                Conectado
+                            </strong>
+
+                            <span>
+                                Firebase Realtime Database
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROCESAMIENTO -->
+                <div class="info-panel">
+
+                    <div class="info-panel-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                PROCESAMIENTO
+                            </span>
+
+                            <h4>
+                                Estado de lectura
+                            </h4>
+
+                        </div>
+
+                        <i class="bi bi-graph-up-arrow"></i>
+
+                    </div>
+
+
+                    <div class="processing-status">
+
+                        <div class="processing-bar">
+
+                            <div
+                                class="processing-fill"
+                                style="width: 100%"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="processing-footer">
+
+                            <span>
+                                Recepción de datos
+                            </span>
+
+                            <strong id="processingStatus">
+                                Activa
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 DETALLE DE MEDICIÓN
+            ================================================== -->
+            <section class="raw-data-panel">
+
+                <div class="raw-data-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            INFORMACIÓN DEL SISTEMA
+                        </span>
+
+                        <h3>
+                            Detalle de medición
+                        </h3>
+
+                    </div>
+
+
+                    <div class="data-source">
+
+                        <i class="bi bi-database-check"></i>
+
+                        <span>
+                            Firebase Realtime Database
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail-grid">
+
+
+                    <!-- ID -->
+                    <div class="detail-item">
+
+                        <span>
+                            ID Tanque
+                        </span>
+
+                        <strong id="tankIdDetail">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <!-- DISTANCIA -->
+                    <div class="detail-item">
+
+                        <span>
+                            Distancia
+                        </span>
+
+                        <strong id="distanceTelemetry">
+                            -- cm
+                        </strong>
+
+                    </div>
+
+
+                    <!-- NIVEL -->
+                    <div class="detail-item">
+
+                        <span>
+                            Nivel
+                        </span>
+
+                        <strong id="levelTelemetry">
+                            -- cm
+                        </strong>
+
+                    </div>
+
+
+                    <!-- CAPACIDAD -->
+                    <div class="detail-item">
+
+                        <span>
+                            Capacidad
+                        </span>
+
+                        <strong id="capacityDetail">
+                            -- L
+                        </strong>
+
+                    </div>
+
+
+                    <!-- FECHA -->
+                    <div class="detail-item">
+
+                        <span>
+                            Fecha / Hora
+                        </span>
+
+                        <strong id="timestampDetail">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <!-- LECTURA -->
+                    <div class="detail-item">
+
+                        <span>
+                            Lectura válida
+                        </span>
+
+                        <strong id="validReadingDetail">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+            <footer class="dashboard-footer">
+
+                <div>
+
+                    <i class="bi bi-droplet-half"></i>
+
+                    <span>
+                        AquaMonitor IoT
+                    </span>
+
+                </div>
+
+
+                <div>
+                    Sistema de monitoreo inteligente de tanques
+                </div>
+
+
+                <div>
+                    <span>
+                        © 2026
+                    </span>
+                </div>
+
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     BOOTSTRAP JS
+========================================================= -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- =========================================================
+     FIREBASE / DASHBOARD JS
+========================================================= -->
+<script
+    type="module"
+    src="js/dashboard.js">
+</script>
+
+</body>
+</html>
