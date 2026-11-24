@@ -1,0 +1,344 @@
+/* =========================================================
+   AQUAMONITOR IoT - LOGIN
+========================================================= */
+
+:root {
+    --bg-dark: #020b15;
+    --card: #061421;
+    --primary: #00c8ff;
+    --primary-dark: #0077ff;
+    --text: #f4f8fc;
+    --muted: #9aafc2;
+    --border: rgba(0, 200, 255, 0.22);
+}
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(0, 200, 255, 0.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(0, 110, 255, 0.13),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020b15 0%,
+            #061522 50%,
+            #03101d 100%
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Círculos decorativos */
+body::before {
+    content: "";
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    top: -300px;
+    left: -220px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 200, 255, 0.08);
+
+    box-shadow:
+        0 0 0 70px rgba(0, 200, 255, 0.025),
+        0 0 0 140px rgba(0, 200, 255, 0.018);
+
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    bottom: -320px;
+    right: -220px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 150, 255, 0.08);
+
+    box-shadow:
+        0 0 0 70px rgba(0, 150, 255, 0.025),
+        0 0 0 140px rgba(0, 150, 255, 0.018);
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   CONTENEDOR DEL LOGIN
+========================================================= */
+
+#loginForm {
+    width: 100%;
+    max-width: 920px;
+
+    min-height: 570px;
+
+    padding: 55px 65px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7, 24, 39, 0.96),
+            rgba(3, 15, 27, 0.96)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        0 0 50px rgba(0, 180, 255, 0.04);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+/* Línea luminosa superior */
+#loginForm::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 12%;
+
+    width: 76%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 200, 255, 0.65),
+        transparent
+    );
+}
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+#loginForm h1 {
+    font-size: 42px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 8px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 25px rgba(0, 200, 255, 0.12);
+}
+
+/* Texto "Acceso al sistema..." */
+#loginForm > p,
+#loginForm h1 + p {
+    color: var(--primary);
+
+    font-size: 15px;
+
+    margin-bottom: 38px;
+}
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+#loginForm label {
+    display: block;
+
+    color: #d9e6f0;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    margin-bottom: 8px;
+
+    margin-top: 18px;
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+#loginForm input {
+    display: block;
+
+    width: 100%;
+
+    max-width: 480px;
+
+    height: 50px;
+
+    padding: 0 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+#loginForm input::placeholder {
+    color: #71869a;
+}
+
+#loginForm input:focus {
+    border-color: rgba(0, 200, 255, 0.65);
+
+    background: rgba(0, 200, 255, 0.04);
+
+    box-shadow:
+        0 0 0 4px rgba(0, 200, 255, 0.07),
+        0 0 25px rgba(0, 200, 255, 0.06);
+}
+
+/* =========================================================
+   BOTÓN
+========================================================= */
+
+#loginForm button {
+    display: block;
+
+    width: 100%;
+    max-width: 480px;
+
+    height: 50px;
+
+    margin-top: 28px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(0, 119, 255, 0.22);
+
+    transition: all 0.25s ease;
+}
+
+#loginForm button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 35px rgba(0, 150, 255, 0.35);
+
+    filter: brightness(1.08);
+}
+
+#loginForm button:active {
+    transform: translateY(0);
+}
+
+/* =========================================================
+   MENSAJE DE LOGIN
+========================================================= */
+
+#loginMessage {
+    width: 100%;
+    max-width: 480px;
+
+    min-height: 22px;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: #7ee8ff;
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+    #loginForm {
+        min-height: auto;
+
+        padding: 40px 28px;
+
+        border-radius: 20px;
+    }
+
+    #loginForm h1 {
+        font-size: 32px;
+    }
+
+    #loginForm input,
+    #loginForm button {
+        max-width: 100%;
+    }
+
+    #loginMessage {
+        max-width: 100%;
+    }
+}
